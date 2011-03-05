@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cp_secondary_id: 1
+  cp_title: MyString
+  cp_intro: MyText
+  cp_definition: MyText
+  in_scope: MyText
+  out_scope: MyText
+
+two:
+  cp_secondary_id: 1
+  cp_title: MyString
+  cp_intro: MyText
+  cp_definition: MyText
+  in_scope: MyText
+  out_scope: MyText

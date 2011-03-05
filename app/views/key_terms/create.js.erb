@@ -1,0 +1,5 @@
+$("#new_key_term_dialog").dialog("close");
+$("#key_terms_selection").append("<%= escape_javascript(check_box_tag 'critical_process[key_term_ids][]', "#{@key_term.id.to_i}", true, :id => 'critical_process_key_term_ids_' ) %>");
+$("#key_terms_selection").append("<%= escape_javascript(@key_term.term )%>");
+$('#key_term_term').val("");
+$('#key_term_meaning').val("");

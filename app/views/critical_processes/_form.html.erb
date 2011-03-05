@@ -1,0 +1,85 @@
+<%= form_for(@critical_process) do |f| %>
+  <% if @critical_process.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@critical_process.errors.count, "error") %> prohibited this critical_process from being saved:</h2>
+
+      <ul>
+      <% @critical_process.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :cp_secondary_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cp_title %><br />
+    <%= f.text_field :cp_title %>
+  </div>
+  <div class="field">
+    <%= f.label :cp_intro %><br />
+    <%= f.text_area :cp_intro %>
+  </div>
+  <div class="field">
+    <%= f.label :cp_definition %><br />
+    <%= f.text_area :cp_definition %>
+  </div>
+  <div class="field">
+    <%= f.label :in_scope %><br />
+    <%= f.text_area :in_scope %>
+  </div>
+  <div class="field">
+    <%= f.label :out_scope %><br />
+    <%= f.text_area :out_scope %>
+  </div>
+  <div class="categories">
+    <% f.fields_for :categories do |builder| %>
+        <%= render 'category_fields', :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields "Add Category", f, :categories %></p>
+  </div>
+  <div class="lessons">
+    <% f.fields_for :lessons do |builder| %>
+       <%= render 'lesson_fields', :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields "Add Lesson", f, :lessons %></p>
+  </div>
+
+  <div id="key_terms_selection">
+
+    <% for key_term in KeyTerm.find(:all) %>
+       <%= check_box_tag "critical_process[key_term_ids][]", key_term.id, @critical_process.key_terms.include?(key_term) %>
+       <%= key_term.term %>
+    <% end %>
+
+  </div>
+
+  <a id="term_link" href='#'> Add Key Term </a>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+    <div id="new_key_term_dialog">
+      <% @key_term = KeyTerm.new %>
+     <%= form_for(@key_term, :remote => true ) do |f| %>
+
+
+          <div class="field">
+            <%= f.label :term %><br />
+            <%= f.text_field :term %>
+          </div>
+          <div class="field">
+            <%= f.label :meaning %><br />
+            <%= f.text_area :meaning %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+
+
+</div>

@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Cp secondary:</b>
+  <%= @critical_process.cp_secondary_id %>
+</p>
+
+<p>
+  <b>Cp title:</b>
+  <%= @critical_process.cp_title %>
+</p>
+
+<p>
+  <b>Cp intro:</b>
+  <%= @critical_process.cp_intro %>
+</p>
+
+<p>
+  <b>Cp definition:</b>
+  <%= @critical_process.cp_definition %>
+</p>
+
+<p>
+  <b>In scope:</b>
+  <%= @critical_process.in_scope %>
+</p>
+
+<p>
+  <b>Out scope:</b>
+  <%= @critical_process.out_scope %>
+</p>
+
+<ol>
+  <% for category in @critical_process.categories %>
+    <li>
+      <%=h category.category_title %>
+      <ul>
+        <% for cbb in category.capability_building_blocks %>
+            <li> <%=h cbb.cbb_title %></li>
+            <li> <%=h cbb.cbb_definition %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ol>
+<b>Lessons Learned:</b>
+<ol>
+  <% for lesson in @critical_process.lessons %>
+    <li>
+      <%=h lesson.lesson_title %>
+      <%=h lesson.lesson_definition %>
+    </li>
+  <% end %>
+</ol>
+
+<p>
+  <b>Key term's</b>
+  <% if @critical_process.key_terms.count > 0 %>
+     <%= @critical_process.key_terms.collect {|key_term| link_to(key_term.term, key_term)}.join(", ") %>
+  <% else %>
+     This process has no Key terms
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_critical_process_path(@critical_process) %> |
+<%= link_to 'Back', critical_processes_path %>

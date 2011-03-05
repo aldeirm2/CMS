@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  lesson_learned_title: MyString
+  lesson_learned_definition: MyText
+  critical_process_id: 1
+
+two:
+  lesson_learned_title: MyString
+  lesson_learned_definition: MyText
+  critical_process_id: 1

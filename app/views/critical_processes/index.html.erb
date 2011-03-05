@@ -1,0 +1,33 @@
+<h1>Listing critical_processes</h1>
+
+<table>
+  <tr>
+    <th>Cp secondary</th>
+    <th>Cp title</th>
+    <th>Cp intro</th>
+    <th>Cp definition</th>
+    <th>In scope</th>
+    <th>Out scope</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @critical_processes.each do |critical_process| %>
+  <tr>
+    <td><%= critical_process.cp_secondary_id %></td>
+    <td><%= critical_process.cp_title %></td>
+    <td><%= critical_process.cp_intro %></td>
+    <td><%= critical_process.cp_definition %></td>
+    <td><%= critical_process.in_scope %></td>
+    <td><%= critical_process.out_scope %></td>
+    <td><%= link_to 'Show', critical_process %></td>
+    <td><%= link_to 'Edit', edit_critical_process_path(critical_process) %></td>
+    <td><%= link_to 'Destroy', critical_process, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Critical process', new_critical_process_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Term:</b>
+  <%= @key_term.term %>
+</p>
+
+<p>
+  <b>Meaning:</b>
+  <%= @key_term.meaning %>
+</p>
+
+
+<%= link_to 'Edit', edit_key_term_path(@key_term) %> |
+<%= link_to 'Back', key_terms_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  category_title: MyString
+  critical_process_id: 1
+  level_1_category: MyText
+  level_2_category: MyText
+  level_3_category: MyText
+  level_4_category: MyText
+  level_5_category: MyText
+
+two:
+  category_title: MyString
+  critical_process_id: 1
+  level_1_category: MyText
+  level_2_category: MyText
+  level_3_category: MyText
+  level_4_category: MyText
+  level_5_category: MyText

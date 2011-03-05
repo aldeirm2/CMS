@@ -1,0 +1,8 @@
+<p class="fields">
+  <%= f.label :lesson_title, "Lesson Title" %><br/>
+  <%= f.text_area :lesson_title, :rows => 2 %>
+  <%= f.label :lesson_definition, "Lesson Description" %><br/>
+  <%= f.text_area :lesson_definition, :rows => 4 %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to_remove_fields "remove", f %>
+</p>

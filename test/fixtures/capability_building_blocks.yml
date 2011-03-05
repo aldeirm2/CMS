@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cbb_title: MyString
+  cbb_definition: MyText
+  category_id: 1
+  level_1_cbb: MyText
+  level_2_cbb: MyText
+  level_3_cbb: MyText
+  level_4_cbb: MyText
+  level_5_cbb: MyText
+
+two:
+  cbb_title: MyString
+  cbb_definition: MyText
+  category_id: 1
+  level_1_cbb: MyText
+  level_2_cbb: MyText
+  level_3_cbb: MyText
+  level_4_cbb: MyText
+  level_5_cbb: MyText

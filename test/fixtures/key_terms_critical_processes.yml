@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  key_term_id: 1
+  critical_process_id: 1
+
+two:
+  key_term_id: 1
+  critical_process_id: 1
