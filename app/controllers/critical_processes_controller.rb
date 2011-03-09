@@ -1,6 +1,9 @@
 class CriticalProcessesController < ApplicationController
 
   before_filter :authenticate_user!
+  authorize_resource
+
+
   # GET /critical_processes
   # GET /critical_processes.xml
   def index

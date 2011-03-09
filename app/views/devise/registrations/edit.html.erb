@@ -15,11 +15,25 @@
   <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></p>
 
-  <p><% for role in Role.find(:all) %>
-        <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+  <p><% for role in Role.where(:review => true) %>
+        <%= check_box_tag "user[roles_as_reviewer_ids][]", role.id, @user.roles.include?(role) %>
         <%= role.name %>
      <% end %>
   </p>
+
+    <p><% for role in Role.where(:edit => true) %>
+        <%= check_box_tag "user[roles_as_editor_ids][]", role.id, @user.roles.include?(role) %>
+        <%= role.name %>
+     <% end %>
+  </p>
+
+      <p><% for role in Role.where(:admin => true) %>
+        <%= check_box_tag "user[role_as_admin_ids][]", role.id, @user.roles.include?(role) %>
+        <%= role.name %>
+     <% end %>
+  </p>
+
+
 
   <p><%= f.submit "Update" %></p>
 <% end %>

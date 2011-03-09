@@ -34,4 +34,15 @@ class CriticalProcess < ActiveRecord::Base
   def has_key_term(key_term)
     self.key_terms.include?(key_term)
   end
+
+  def editors
+    list_of_users = Array.new
+    for role in self.roles
+      if role.edit
+         list_of_users << role.users
+      end
+    end
+    return list_of_users
+  end
+
 end
